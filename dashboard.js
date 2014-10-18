@@ -18,7 +18,7 @@ var TopDashboard = function(container, scriptFee, genesisFee) {
                 $(container)
                     .prepend($('<li>')
                     .append($('<a>')
-                    .append('Coinbase Btc Rate Used : ' + btcValue + ' $')));
+                    .append('BTC Rate : ' + btcValue + ' $')));
             }
             if (GM_getValue('ENABLE_TOP_TOTAL_AMOUNT')) {
                 $(container)
@@ -27,14 +27,9 @@ var TopDashboard = function(container, scriptFee, genesisFee) {
                     .append('TOTAL : ' + $('.balance-value').html() + ' BTC')));
             }
             if (GM_getValue('ENABLE_TOP_FEE')) {
-                $(container)
                     .prepend($('<li>')
                     .append($('<a>')
-                    .append('0.01$ => ' + parseFloat(genesysFee.toFixed(8)) + ' BTC')));
-                $(container)
-                    .prepend($('<li>')
-                    .append($('<a>')
-                    .append('Calculated Fees : 0.08$ => ' +
+                    .append('Fees : 0.08$ / ' +
                         parseFloat(scriptFee.toFixed(8)) + ' BTC')));
             }
             if (GM_getValue('ACTIVATE_CLOCK')) {
